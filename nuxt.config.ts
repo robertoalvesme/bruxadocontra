@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Sacramento&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap',
         },
       ],
     },

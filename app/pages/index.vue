@@ -21,10 +21,10 @@ const products = [
         <!-- title band -->
         <div class="relative z-10 text-center">
           <h1 class="display-title inline-block bg-gold/90 px-10 py-4 text-3xl text-white sm:text-5xl">
-            Tarot e Astrologia
+            Bruxaria Natural
           </h1>
           <p class="mt-5 text-sm uppercase tracking-[0.4em] text-gold-dark">
-            Ciência e Prosperidade
+            Tarot e Astrologia Cigana
           </p>
         </div>
       </div>
@@ -36,7 +36,8 @@ const products = [
         <PlaceholderImage label="Bruxa do Contra" ratio="aspect-[3/4]" tone="sand" class="max-w-sm" />
         <div>
           <h2 class="script-title text-5xl">Lorem ipsum dolor sit amet.</h2>
-          <p class="mt-6 leading-relaxed text-ink-soft">
+          <!-- TODO: Esse bloco eu quero em Josefin -->
+          <p class="mt-6 leading-relaxed text-ink-soft font-sans">
             Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui
             esse pariatur duis deserunt mollit dolore cillum minim tempor enim.
             Elit aute irure tempor cupidatat incididunt sint deserunt ut

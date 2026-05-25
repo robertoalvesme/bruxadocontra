@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // These font utilities are referenced via @apply and may not appear literally
+  // in templates, so we safelist them to guarantee the classes are always
+  // generated and usable directly on any element (e.g. <p class="font-sans">).
+  safelist: ['font-sans', 'font-display', 'font-script', 'font-menu'],
   theme: {
     extend: {
       colors: {
@@ -23,12 +27,14 @@ export default {
         },
       },
       fontFamily: {
-        // Calligraphy logo
-        logo: ['"Pinyon Script"', 'cursive'],
-        // Decorative script headings (the purple titles)
-        script: ['"Sacramento"', 'cursive'],
-        // Body + uppercase display
-        sans: ['Jost', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Decorative headings (the purple titles)
+        script: ['"IM Fell DW Pica"', 'Georgia', 'serif'],
+        // Body text
+        sans: ['"Josefin Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Navigation menu
+        menu: ['"Josefin Sans"', 'ui-sans-serif', 'sans-serif'],
+        // Display / titles
+        display: ['"IM Fell DW Pica"', 'Georgia', 'serif'],
       },
       letterSpacing: {
         display: '0.18em',

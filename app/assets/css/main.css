@@ -16,7 +16,7 @@
 
   /* Uppercase spaced display title (e.g. "TAROT E ASTROLOGIA") */
   .display-title {
-    @apply font-sans font-medium uppercase tracking-display;
+    @apply font-display uppercase tracking-display;
   }
 
   /* Decorative purple script heading */

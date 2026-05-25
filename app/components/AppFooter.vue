@@ -6,9 +6,9 @@
     <div class="container-page grid grid-cols-1 gap-10 py-12 md:grid-cols-3 md:items-center">
       <!-- Brand + tagline -->
       <div>
-        <p class="font-logo text-4xl leading-none text-ink">Bruxa do Contra</p>
+        <p class="text-3xl leading-none text-ink">Bruxa do Contra</p>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-          asd
+          Júlia Souza é cartomante do Baralho Cigano. Aos 28 anos, vive no Rio de Janeiro e traz na sua trajetória um percurso natural entre o Sul e o litoral carioca — sempre em busca de conhecimento e prática espiritual. Nas leituras, alia sensibilidade e clareza para orientar você a tomar decisões mais conscientes e transformar desafios em oportunidades de crescimento.
         </p>
       </div>
 
@@ -30,7 +30,7 @@
           </a>
         </div>
         <p class="mt-4 text-sm text-ink-soft">(11) 94146-9000</p>
-        <p class="text-sm text-ink-soft">CONTATO@BRUXADOCONTRA.COM.BR</p>
+        <p class="text-sm text-ink-soft">falecomjulia@bruxadocontra.com.br</p>
       </div>
     </div>
   </footer>

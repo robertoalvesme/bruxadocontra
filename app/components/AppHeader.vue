@@ -21,7 +21,7 @@ const open = ref(false)
       </NuxtLink>
 
       <!-- Desktop nav -->
-      <nav class="hidden items-center gap-6 lg:flex">
+      <nav class="hidden items-center gap-6 font-menu lg:flex">
         <NuxtLink
           v-for="link in links"
           :key="link.to"
@@ -54,7 +54,7 @@ const open = ref(false)
     </div>
 
     <!-- Mobile menu -->
-    <nav v-if="open" class="border-t border-sand lg:hidden">
+    <nav v-if="open" class="border-t border-sand font-menu lg:hidden">
       <div class="container-page flex flex-col gap-1 py-3">
         <NuxtLink
           v-for="link in links"
