@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Section wrapper */
+  .container-page {
+    @apply mx-auto w-full max-w-container px-6;
+  }
+
+  /* Uppercase spaced display title (e.g. "TAROT E ASTROLOGIA") */
+  .display-title {
+    @apply font-sans font-medium uppercase tracking-display;
+  }
+
+  /* Decorative purple script heading */
+  .script-title {
+    @apply font-script text-grape leading-none;
+  }
+
+  /* Primary gold button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center rounded bg-gold px-7 py-3
+           text-sm uppercase tracking-wider text-white transition-colors
+           hover:bg-gold-dark;
+  }
+
+  /* Dark button */
+  .btn-ink {
+    @apply inline-flex items-center justify-center rounded bg-ink px-7 py-3
+           text-sm uppercase tracking-wider text-white transition-colors
+           hover:bg-ink-soft;
+  }
+
+  /* Outline gold button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded border border-gold
+           px-7 py-3 text-sm uppercase tracking-wider text-gold-dark
+           transition-colors hover:bg-gold hover:text-white;
+  }
+
+  /* The thin gold decorative divider used between header/sections */
+  .gold-rule {
+    @apply h-[3px] w-full bg-gradient-to-r from-gold/40 via-gold to-gold/40;
+  }
+}
