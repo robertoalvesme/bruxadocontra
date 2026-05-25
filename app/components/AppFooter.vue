@@ -1,3 +1,5 @@
+<script setup lang="ts">
+</script>
 <template>
   <footer class="mt-20">
     <div class="gold-rule" />
@@ -6,17 +8,14 @@
       <div>
         <p class="font-logo text-4xl leading-none text-ink">Bruxa do Contra</p>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-          Julia é a bruxa
+          asd
         </p>
       </div>
 
       <!-- Center crest -->
       <div class="flex justify-center">
         <div class="flex h-20 w-20 items-center justify-center rounded-full border border-gold/50 text-gold">
-          <!-- Bee crest placeholder -->
-          <svg class="h-10 w-10" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2c-1.1 0-2 .9-2 2 0 .6.3 1.1.7 1.5C9.6 6.2 9 7.3 9 8.5V9H7a1 1 0 0 0 0 2h2v2H7a1 1 0 0 0 0 2h2v.5c0 2 1.3 3.5 3 3.5s3-1.5 3-3.5V15h2a1 1 0 0 0 0-2h-2v-2h2a1 1 0 0 0 0-2h-2v-.5c0-1.2-.6-2.3-1.7-3C13.7 5.1 14 4.6 14 4c0-1.1-.9-2-2-2Z" />
-          </svg>
+          <img src="/bruxa-do-contra-logo-solo.svg" alt="Bruxa do Contra" class="h-16 w-16" />
         </div>
       </div>
 

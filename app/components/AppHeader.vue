@@ -16,8 +16,8 @@ const open = ref(false)
   <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur">
     <div class="container-page flex items-center justify-between gap-4 py-4">
       <!-- Logo -->
-      <NuxtLink to="/" class="font-logo text-3xl leading-none text-ink">
-        Bruxa do Contra
+      <NuxtLink to="/" class="leading-none text-ink">
+        <img src="/bruxa-do-contra-logo.svg" alt="Bruxa do Contra" class="h-12 w-auto" />
       </NuxtLink>
 
       <!-- Desktop nav -->
