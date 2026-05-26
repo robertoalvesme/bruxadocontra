@@ -25,7 +25,7 @@
           <a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded bg-grape text-white transition-colors hover:bg-grape-dark">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7c-.2-.8-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.9-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.8.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.9 1.7-1.7.4-1.5.4-4.7.4-4.7Zm-13 3V9l5.2 3-5.2 3Z" /></svg>
           </a>
-          <a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded bg-grape text-white transition-colors hover:bg-grape-dark">
+          <a href="https://www.instagram.com/bruxadocontraveneno/" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded bg-grape text-white transition-colors hover:bg-grape-dark">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
           </a>
         </div>
