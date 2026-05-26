@@ -4,9 +4,12 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-# Install dependencies from the lockfile (reproducible build)
+# Install dependencies. Usamos `npm install` (não `npm ci`): o package-lock.json
+# foi gerado no macOS e omite dependências opcionais que o Linux precisa
+# (@emnapi/core, @emnapi/runtime — fallback WASM do oxc-parser/rollup), o que
+# faz o `npm ci` falhar no build. `npm install` reconcilia o lock e instala.
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm install --no-audit --no-fund
 
 # Build the Nuxt app -> generates .output (Nitro node-server)
 COPY . .
