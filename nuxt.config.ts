@@ -18,6 +18,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/bruxa-do-contra-logo-solo.svg' },
+        { rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
           rel: 'preconnect',
