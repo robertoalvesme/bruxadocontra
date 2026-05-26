@@ -19,13 +19,6 @@
     @apply font-display uppercase tracking-display;
   }
 
-
-    .bg-gold{
-        .script-title {
-            @apply font-script text-ink leading-none;
-        }
-    }
-
   /* Decorative purple script heading */
   .script-title {
     @apply font-script text-grape leading-none;
