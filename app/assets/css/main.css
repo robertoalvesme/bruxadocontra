@@ -49,4 +49,16 @@
   .gold-rule {
     @apply h-[3px] w-full bg-gradient-to-r from-gold/40 via-gold to-gold/40;
   }
+
+  /* Form atoms — used on Área Exclusiva, Loja checkout, etc. */
+  .form-label {
+    @apply block text-xs uppercase tracking-wider text-gold-dark;
+  }
+
+  .form-input {
+    @apply mt-2 w-full rounded border border-sand bg-white px-4 py-3 text-ink
+           placeholder:text-ink-soft/40 transition-colors
+           focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30
+           disabled:cursor-not-allowed disabled:bg-sand/30;
+  }
 }
