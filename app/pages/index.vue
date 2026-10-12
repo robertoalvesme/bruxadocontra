@@ -1,11 +1,3 @@
-<script setup lang="ts">
-const products = [
-  { name: 'Vela Aromática Canela', price: 'R$ 100,00', tone: 'sand' as const },
-  { name: 'Home Spray Bamboo 250ml', price: 'R$ 15,25', tone: 'sand' as const, featured: true },
-  { name: 'Vela Aromática Lavanda', price: 'R$ 100,00', tone: 'sand' as const },
-]
-</script>
-
 <template>
   <div>
     <!-- HERO -->
@@ -65,32 +57,8 @@ const products = [
       </div>
     </section>
 
-    <!-- PRODUCTS -->
-    <section class="bg-cream">
-      <div class="container-page py-16">
-        <div class="mb-10 flex justify-center">
-          <span class="display-title rounded bg-sand px-8 py-2 text-sm text-ink-soft">Lorem Ipsum</span>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <article
-            v-for="p in products"
-            :key="p.name"
-            class="group relative rounded-lg bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
-            :class="{ 'md:-mt-6 md:mb-6 ring-1 ring-sand': p.featured }"
-          >
-            <PlaceholderImage :label="p.name" ratio="aspect-square" tone="sand" />
-            <div class="mt-4">
-              <h3 class="text-sm uppercase tracking-wide text-gold-dark">{{ p.name }}</h3>
-              <p class="mt-1 text-sm text-ink-soft">{{ p.price }}</p>
-            </div>
-            <button class="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-cream text-gold-dark opacity-0 transition-opacity group-hover:opacity-100" aria-label="Ver produto">
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" stroke-linecap="round" /></svg>
-            </button>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- PRODUCTS: os produtos a venda na loja (components/FeaturedProducts.vue) -->
+    <FeaturedProducts />
 
     <!-- FEATURE -->
     <section class="bg-cream pb-16">
