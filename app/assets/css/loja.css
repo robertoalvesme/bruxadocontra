@@ -1,0 +1,57 @@
+/*
+ * As paginas da loja (rhfactor-kit) com a cara da Bruxa do Contra: o kit
+ * traz um tema neutro em tokens --rh-*; aqui eles ganham a paleta e as fontes
+ * do site (creme, areia, dourado, uva; IM Fell nos titulos, Josefin no texto).
+ */
+:root {
+  --rh-font: "Josefin Sans", ui-sans-serif, system-ui, sans-serif;
+  --rh-color-bg: #F8F6F2;
+  --rh-color-text: #2D2A26;
+  --rh-color-muted: #6A6358;
+  --rh-color-border: #E4DBCD;
+  --rh-color-surface: #FFFFFF;
+  --rh-color-accent: #7548A0;
+  --rh-color-accent-contrast: #FFFFFF;
+  --rh-radius: 6px;
+  --rh-radius-sm: 4px;
+  --rh-max-width: 1200px;
+}
+
+/* Titulos no estilo do site: a fonte decorativa, em uva. */
+.rh-form__title, .rh-shelf__title, .rh-product__name, .rh-section-title, .rh-panel__title {
+  font-family: "IM Fell DW Pica", Georgia, serif;
+  font-weight: 400;
+  color: #9D7EBC;
+  letter-spacing: 0;
+}
+.rh-shelf__title, .rh-form__title { font-size: clamp(2rem, 4vw, 3rem); }
+
+/* Botoes: dourado, retos e em caixa alta, como os do site. */
+.rh-button {
+  border-radius: 4px;
+  background: #BCA784;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .85rem;
+}
+.rh-button:hover { background: #A8916B; opacity: 1; }
+
+/* As paginas da loja respiram como as do site. */
+.rh-shelf, .rh-product, .rh-cart, .rh-checkout, .rh-account, .rh-purchase, .rh-auth { padding-top: 48px; padding-bottom: 72px; }
+
+/* Cabecalho: sacola e conta no estilo do menu. */
+.bdc-header-actions { display: flex; align-items: center; gap: 1rem; }
+/* A sacola e o menu do celular somem no desktop (o tema vence o lg:hidden do Tailwind). */
+@media (min-width: 1024px) { .bdc-header-actions--mobile { display: none; } }
+.bdc-header-actions .rh-account-button, .bdc-header-actions .rh-cart-button { color: #2D2A26; }
+.bdc-header-actions .rh-account-button:hover, .bdc-header-actions .rh-cart-button:hover { color: #A8916B; }
+.bdc-header-actions .rh-cart-button__count { background: #7548A0; color: #fff; }
+
+/* Aviso de "no carrinho" (plugins/cart.client.ts). */
+.site-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 2000;
+  max-width: calc(100vw - 32px); padding: 14px 20px; border-radius: 4px;
+  background: #2D2A26; color: #F8F6F2; font-size: .9rem; letter-spacing: .02em;
+}
+.site-toast-enter-active, .site-toast-leave-active { transition: opacity .2s, transform .2s; }
+.site-toast-enter-from, .site-toast-leave-to { opacity: 0; transform: translate(-50%, 8px); }
