@@ -41,6 +41,8 @@
 
 /* Cabecalho: sacola e conta no estilo do menu. */
 .bdc-header-actions { display: flex; align-items: center; gap: 1rem; }
+/* A sacola e o menu do celular somem no desktop (o tema vence o lg:hidden do Tailwind). */
+@media (min-width: 1024px) { .bdc-header-actions--mobile { display: none; } }
 .bdc-header-actions .rh-account-button, .bdc-header-actions .rh-cart-button { color: #2D2A26; }
 .bdc-header-actions .rh-account-button:hover, .bdc-header-actions .rh-cart-button:hover { color: #A8916B; }
 .bdc-header-actions .rh-cart-button__count { background: #7548A0; color: #fff; }

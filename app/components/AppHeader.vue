@@ -44,7 +44,7 @@ const open = ref(false)
       </nav>
 
       <!-- Mobile: sacola sempre a mao, e o menu -->
-      <div class="bdc-header-actions lg:hidden">
+      <div class="bdc-header-actions bdc-header-actions--mobile">
         <RhCartButton />
         <button class="text-ink" aria-label="Menu" @click="open = !open">
           <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
