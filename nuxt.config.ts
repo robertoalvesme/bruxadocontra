@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@rhfactor/kit'],
   css: ['~/assets/css/main.css', '~/assets/css/loja.css'],
 
+  // Paginas ainda sem conteudo: fora do menu e, se alguem chegar pelo endereco, de volta a home.
+  routeRules: Object.fromEntries(
+    ['/tarot', '/astrologia', '/midia', '/blog', '/quem-somos', '/assinatura', '/area-exclusiva']
+      .map(path => [path, { redirect: { to: '/', statusCode: 302 } }])
+  ),
+
   rhfactor: {
     storeId: process.env.RHFACTOR_STORE_ID ?? '',
     apiBase: process.env.RHFACTOR_API_BASE ?? 'http://localhost:8085',

@@ -1,12 +1,15 @@
 <script setup lang="ts">
+// Sem conteudo ainda: so a loja, a conta e os pedidos (as paginas ocultas voltam para a home, nuxt.config).
 const links = [
-  { label: 'Tarot', to: '/tarot' },
-  { label: 'Astrologia', to: '/astrologia' },
-  { label: 'Mídia', to: '/midia' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Quem Somos', to: '/quem-somos' },
+  { label: 'Início', to: '/' },
+  // { label: 'Tarot', to: '/tarot' },
+  // { label: 'Astrologia', to: '/astrologia' },
+  // { label: 'Mídia', to: '/midia' },
+  // { label: 'Blog', to: '/blog' },
+  // { label: 'Quem Somos', to: '/quem-somos' },
   { label: 'Loja', to: '/loja' },
-  { label: 'Assinatura', to: '/assinatura' },
+  { label: 'Pedidos', to: '/minha-conta/pedidos' },
+  // { label: 'Assinatura', to: '/assinatura' },
 ]
 
 const open = ref(false)
@@ -27,14 +30,15 @@ const open = ref(false)
           :key="link.to"
           :to="link.to"
           class="text-sm tracking-wide text-ink-soft transition-colors hover:text-gold-dark"
-          active-class="text-gold-dark"
+          :exact-active-class="link.to === '/' ? 'text-gold-dark' : undefined"
+          :active-class="link.to === '/' ? undefined : 'text-gold-dark'"
         >
           {{ link.label }}
         </NuxtLink>
 
-        <NuxtLink to="/area-exclusiva" class="btn-ink !px-5 !py-2">
+        <!-- <NuxtLink to="/area-exclusiva" class="btn-ink !px-5 !py-2">
           Área Exclusiva
-        </NuxtLink>
+        </NuxtLink> -->
 
         <!-- Conta e sacola (rhfactor-kit): entrar/minha conta e quantos itens ha no carrinho. -->
         <div class="bdc-header-actions">
@@ -67,9 +71,9 @@ const open = ref(false)
           {{ link.label }}
         </NuxtLink>
         <NuxtLink to="/minha-conta" class="py-2 text-sm text-ink-soft hover:text-gold-dark" @click="open = false">Minha conta</NuxtLink>
-        <NuxtLink to="/area-exclusiva" class="btn-ink mt-2 !py-2" @click="open = false">
+        <!-- <NuxtLink to="/area-exclusiva" class="btn-ink mt-2 !py-2" @click="open = false">
           Área Exclusiva
-        </NuxtLink>
+        </NuxtLink> -->
       </div>
     </nav>
 

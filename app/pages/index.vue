@@ -100,7 +100,7 @@ const products = [
             Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate
             aute id deserunt nisi.
           </p>
-          <NuxtLink to="/quem-somos" class="btn-gold mt-8 self-start">Lorem Ipsum</NuxtLink>
+          <!-- <NuxtLink to="/quem-somos" class="btn-gold mt-8 self-start">Lorem Ipsum</NuxtLink> -->
         </div>
         <PlaceholderImage label="Bruxa do Contra — leitura de Tarot" ratio="aspect-[4/3]" tone="ink" :rounded="false" class="h-full" />
       </div>
