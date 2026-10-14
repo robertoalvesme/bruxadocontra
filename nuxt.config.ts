@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // Site da Bruxa do Contra: layout proprio, com as paginas de loja do
-// @rhfactor/kit (prateleira em /loja, produto, carrinho, conta e checkout).
+// @ocahub/kit (prateleira em /loja, produto, carrinho, conta e checkout).
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@rhfactor/kit'],
+  modules: ['@nuxtjs/tailwindcss', '@ocahub/kit'],
   css: ['~/assets/css/main.css', '~/assets/css/loja.css'],
 
   // Paginas ainda sem conteudo: fora do menu e, se alguem chegar pelo endereco, de volta a home.
