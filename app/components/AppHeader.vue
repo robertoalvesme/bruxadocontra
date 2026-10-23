@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Sem conteudo ainda: so a loja, a conta e os pedidos (as paginas ocultas voltam para a home, nuxt.config).
-const links = [
+const base = [
   { label: 'Início', to: '/' },
   // { label: 'Tarot', to: '/tarot' },
   // { label: 'Astrologia', to: '/astrologia' },
@@ -11,6 +11,13 @@ const links = [
   { label: 'Pedidos', to: '/minha-conta/pedidos' },
   // { label: 'Assinatura', to: '/assinatura' },
 ]
+
+// Mapa astral (00026): a amostra gratis entra no menu quando a loja oferece (Mapa astral > Amostra gratis, no painel).
+const sampleOn = ref(false)
+onMounted(async () => { sampleOn.value = await useRhBirthCharts().sampleEnabled() })
+const links = computed(() => sampleOn.value
+  ? [...base.slice(0, 2), { label: 'Mapa astral grátis', to: '/mapa-astral' }, ...base.slice(2)]
+  : base)
 
 const open = ref(false)
 </script>
