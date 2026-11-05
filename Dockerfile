@@ -21,8 +21,13 @@ ARG RHFACTOR_STORE_ID=""
 ARG RHFACTOR_API_BASE="http://host.docker.internal:8085"
 # Muda a cada publicacao: sem ele, o build sairia do cache com os dados antigos da loja.
 ARG RHFACTOR_BUILD_ID=""
+# Google (00035), do painel: Analytics e a meta do Search Console. Vazio = sem.
+ARG RHFACTOR_GOOGLE_ANALYTICS_ID=""
+ARG RHFACTOR_GOOGLE_SITE_VERIFICATION=""
 ENV RHFACTOR_STORE_ID=$RHFACTOR_STORE_ID \
     RHFACTOR_API_BASE=$RHFACTOR_API_BASE \
+    RHFACTOR_GOOGLE_ANALYTICS_ID=$RHFACTOR_GOOGLE_ANALYTICS_ID \
+    RHFACTOR_GOOGLE_SITE_VERIFICATION=$RHFACTOR_GOOGLE_SITE_VERIFICATION \
     NODE_ENV=production
 RUN npx nuxt prepare && npm run build
 
