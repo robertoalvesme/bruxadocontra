@@ -1,16 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // Site da Bruxa do Contra: layout proprio, com as paginas de loja do
 // @ocahub/kit (prateleira em /loja, produto, carrinho, conta e checkout).
+const emptyPages = ['/tarot', '/astrologia', '/midia', '/blog', '/quem-somos', '/assinatura', '/area-exclusiva']
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@ocahub/kit'],
   css: ['~/assets/css/main.css', '~/assets/css/loja.css'],
 
-  // Paginas ainda sem conteudo: fora do menu e, se alguem chegar pelo endereco, de volta a home.
+  // Paginas ainda sem conteudo: fora do menu e do sitemap e, se alguem chegar pelo endereco, de volta a home.
   routeRules: Object.fromEntries(
-    ['/tarot', '/astrologia', '/midia', '/blog', '/quem-somos', '/assinatura', '/area-exclusiva']
-      .map(path => [path, { redirect: { to: '/', statusCode: 302 } }])
+    emptyPages.map(path => [path, { redirect: { to: '/', statusCode: 302 } }])
   ),
 
   rhfactor: {
@@ -20,7 +21,8 @@ export default defineNuxtConfig({
     contractsBase: process.env.RHFACTOR_CONTRACTS_BASE ?? 'http://localhost:8082',
     paymentsBase: process.env.RHFACTOR_PAYMENTS_BASE ?? 'http://localhost:8089',
     // A home e da Bruxa; a prateleira do kit fica na Loja.
-    pages: { shelf: '/loja' }
+    pages: { shelf: '/loja' },
+    sitemap: { exclude: emptyPages }
   },
 
   app: {
