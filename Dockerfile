@@ -9,12 +9,22 @@
 # responder em RHFACTOR_API_BASE nesse momento.
 # =============================================================================
 
+# Kit local (so no dev): o cloud-management passa `--build-context kit-local=...`
+# com o kit em desenvolvimento empacotado (ocahub-kit.tgz). Sem isso, este
+# estagio fica vazio e vale o kit do npm (HML e Netlify nao usam este passo).
+FROM scratch AS kit-local
+
 FROM node:24-alpine AS builder
 WORKDIR /src/bruxadocontra
 COPY package.json ./
 # `npm install` (e nao `npm ci`): o lock gerado no macOS omite dependencias
 # opcionais que o Linux precisa (fallback WASM do oxc-parser/rollup).
 RUN npm install --ignore-scripts --no-audit --no-fund
+COPY --from=kit-local / /tmp/kit-local/
+RUN if [ -f /tmp/kit-local/ocahub-kit.tgz ]; then \
+      echo "Kit local: $(tar -xOzf /tmp/kit-local/ocahub-kit.tgz package/package.json | grep '"version"')" && \
+      npm install --no-save --ignore-scripts --no-audit --no-fund /tmp/kit-local/ocahub-kit.tgz; \
+    fi
 COPY . .
 
 ARG RHFACTOR_STORE_ID=""
