@@ -5,15 +5,17 @@
 const props = withDefaults(
   defineProps<{
     title?: string
+    eyebrow?: string
     /** Quantos produtos mostrar (de 1 a 3 cabem lado a lado). */
     limit?: number
     /** Fundo da faixa. */
-    tone?: 'cream' | 'white'
+    tone?: 'parchment' | 'light'
   }>(),
   {
-    title: 'Destaques da loja',
+    title: 'Escolha a sua leitura',
+    eyebrow: 'Leituras disponíveis',
     limit: 3,
-    tone: 'cream',
+    tone: 'parchment',
   },
 )
 
@@ -37,34 +39,39 @@ function priceOf(p: { priceFrom: number, priceTo: number, currency: string }) {
 </script>
 
 <template>
-  <section v-if="products.length" :class="tone === 'white' ? 'bg-white' : 'bg-cream'" data-bdc="featured-products">
-    <div class="container-page py-16">
-      <div class="mb-10 flex justify-center">
-        <span class="display-title rounded bg-sand px-8 py-2 text-sm text-ink-soft">{{ title }}</span>
+  <section v-if="products.length" :class="tone === 'light' ? 'bg-parchment-light' : 'bg-parchment'" data-bdc="featured-products">
+    <div class="container-page py-20">
+      <div class="mb-12 text-center">
+        <p class="eyebrow">{{ eyebrow }}</p>
+        <h2 class="section-title mt-3">{{ title }}</h2>
       </div>
 
-      <div class="grid gap-6" :class="grid">
+      <div class="grid gap-7" :class="grid">
         <NuxtLink
           v-for="(p, i) in products"
           :key="p.id"
           :to="links.product(p.slug)"
-          class="group relative block rounded-lg bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
-          :class="{ 'md:-mt-6 md:mb-6 ring-1 ring-sand': featured(i) }"
+          class="group flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-parchment-light transition-shadow hover:shadow-[0_12px_32px_rgba(32,56,44,.12)]"
+          :class="{ 'md:-mt-4 md:mb-4 ring-1 ring-gold/60': featured(i) }"
         >
-          <div v-if="p.image" class="overflow-hidden rounded-lg">
-            <RhImage :image="p.image" :format="store?.imageFormat ?? 'SQUARE'" :alt="p.name" sizes="(min-width: 768px) 30vw, 90vw" />
+          <div v-if="p.image" class="overflow-hidden">
+            <RhImage :image="p.image" :format="store?.imageFormat ?? 'SQUARE'" :alt="p.name" sizes="(min-width: 768px) 30vw, 90vw" class="transition-transform duration-500 group-hover:scale-[1.03]" />
           </div>
-          <PlaceholderImage v-else :label="p.name" ratio="aspect-square" tone="sand" />
-          <div class="mt-4">
-            <h3 class="text-sm uppercase tracking-wide text-gold-dark">{{ p.name }}</h3>
-            <p class="mt-1 text-sm text-ink-soft">
-              {{ priceOf(p) }}<template v-if="p.serviceMinutes"> · {{ p.serviceMinutes }} min</template>
+          <div v-else class="flex aspect-[4/3] items-center justify-center bg-night">
+            <img src="/img/mariposa.jpg" alt="" loading="lazy" class="h-24 w-24 rounded-full opacity-90 ring-1 ring-gold/60">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="text-2xl">{{ p.name }}</h3>
+            <p class="mt-2 text-sm text-ink-soft">
+              {{ priceOf(p) }}<template v-if="p.serviceMinutes"> · {{ p.serviceMinutes }} min ao vivo</template>
             </p>
+            <span class="link-arrow mt-auto pt-6">Ver detalhes <span aria-hidden="true">→</span></span>
           </div>
-          <span class="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-cream text-gold-dark opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" stroke-linecap="round" /></svg>
-          </span>
         </NuxtLink>
+      </div>
+
+      <div class="mt-12 text-center">
+        <NuxtLink to="/loja" class="btn-outline">Ver todas as leituras e produtos</NuxtLink>
       </div>
     </div>
   </section>

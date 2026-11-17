@@ -1,36 +1,56 @@
 <script setup lang="ts">
+const year = new Date().getFullYear()
 </script>
+
 <template>
-  <footer class="mt-20">
-    <div class="gold-rule" />
-    <div class="container-page grid grid-cols-1 gap-10 py-12 md:grid-cols-3 md:items-center">
-      <!-- Brand + tagline -->
+  <footer class="relative overflow-hidden bg-night-deep text-parchment/80">
+    <div class="floresta-only pt-10"><CelestialDivider /></div>
+    <BotanicalSprig class="floresta-only pointer-events-none absolute -bottom-16 -right-6 h-[300px] w-[150px] -rotate-12 opacity-40" :bend="50" :leaves="8" :seed="5" />
+    <div class="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
       <div>
-        <p class="text-3xl leading-none text-ink">Bruxa do Contra</p>
-        <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-          Júlia Souza é cartomante do Baralho Cigano. Aos 28 anos, vive no Rio de Janeiro e traz na sua trajetória um percurso natural entre o Sul e o litoral carioca — sempre em busca de conhecimento e prática espiritual. Nas leituras, alia sensibilidade e clareza para orientar você a tomar decisões mais conscientes e transformar desafios em oportunidades de crescimento.
+        <div class="flex items-center gap-3">
+          <img src="/img/mariposa.jpg" alt="" width="56" height="56" loading="lazy" class="h-14 w-14 rounded-full ring-1 ring-gold/60">
+          <p class="font-display text-xl tracking-[0.08em] text-parchment">Bruxa do Contra</p>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed">
+          Espiritualidade com os pés na vida real. Leituras de Baralho Cigano, conteúdos e produtos feitos com
+          intenção, respeito e cuidado, sem promessas fáceis e sem atalhos.
         </p>
       </div>
 
-      <!-- Center crest -->
-      <div class="flex justify-center">
-        <div class="flex h-20 w-20 items-center justify-center rounded-full border border-gold/50 text-gold">
-          <img src="/bruxa-do-contra-logo-solo.svg" alt="Bruxa do Contra" class="h-16 w-16" />
-        </div>
-      </div>
+      <nav aria-label="Rodapé">
+        <p class="eyebrow eyebrow--light">Navegue</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><NuxtLink to="/consultas" class="hover:text-gold-light">Consultas e leituras</NuxtLink></li>
+          <li><NuxtLink to="/consultas#perguntas" class="hover:text-gold-light">Perguntas frequentes</NuxtLink></li>
+          <li><NuxtLink to="/sobre" class="hover:text-gold-light">Sobre a Bruxa do Contra</NuxtLink></li>
+          <li><NuxtLink to="/loja" class="hover:text-gold-light">Loja</NuxtLink></li>
+          <li><NuxtLink to="/minha-conta" class="hover:text-gold-light">Minha conta</NuxtLink></li>
+        </ul>
+      </nav>
 
-      <!-- Contact -->
-      <div class="md:justify-self-end md:text-right">
-        <div class="flex gap-3 md:justify-end">
-          <a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded bg-grape text-white transition-colors hover:bg-grape-dark">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7c-.2-.8-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.9-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.8.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.9 1.7-1.7.4-1.5.4-4.7.4-4.7Zm-13 3V9l5.2 3-5.2 3Z" /></svg>
-          </a>
-          <a href="https://www.instagram.com/bruxadocontraveneno/" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded bg-grape text-white transition-colors hover:bg-grape-dark">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
-          </a>
-        </div>
-        <p class="mt-4 text-sm text-ink-soft">(11) 94146-9000</p>
-        <p class="text-sm text-ink-soft">falecomjulia@bruxadocontra.com.br</p>
+      <div>
+        <p class="eyebrow eyebrow--light">Fale comigo</p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li>
+            <a href="https://www.instagram.com/bruxadocontraveneno/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold-light">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+              @bruxadocontraveneno
+            </a>
+          </li>
+          <li>
+            <a href="mailto:julia@bruxadocontra.com.br" class="inline-flex items-center gap-2 break-all hover:text-gold-light">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+              julia@bruxadocontra.com.br
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gold/15">
+      <div class="container-page flex flex-col gap-2 py-6 text-xs text-parchment/60 sm:flex-row sm:justify-between">
+        <p>© {{ year }} Bruxa do Contra. Todos os direitos reservados.</p>
+        <p>A leitura é aconselhamento espiritual e não substitui atendimento médico ou psicológico.</p>
       </div>
     </div>
   </footer>

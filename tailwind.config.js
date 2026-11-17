@@ -1,47 +1,39 @@
 /** @type {import('tailwindcss').Config} */
+// Paleta da Bruxa do Contra (temp/paleta-de-cores.jpeg) + o terracota do logotipo.
 export default {
-  // These font utilities are referenced via @apply and may not appear literally
-  // in templates, so we safelist them to guarantee the classes are always
-  // generated and usable directly on any element (e.g. <p class="font-sans">).
-  safelist: ['font-sans', 'font-display', 'font-script', 'font-menu'],
+  safelist: ['font-sans', 'font-display', 'font-serif'],
   theme: {
     extend: {
       colors: {
-        cream: '#F8F6F2',
-        sand: {
-          DEFAULT: '#E4DBCD',
-          dark: '#D4C7B1',
+        // Fundo escuro do site (cabecalho, rodape, faixas): marrom-tinta por padrao,
+        // verde-floresta com ?tema=verde (variaveis em main.css).
+        night: {
+          DEFAULT: 'rgb(var(--bdc-night) / <alpha-value>)',
+          deep: 'rgb(var(--bdc-night-deep) / <alpha-value>)',
+          soft: 'rgb(var(--bdc-night-soft) / <alpha-value>)',
         },
-        gold: {
-          DEFAULT: '#BCA784',
-          dark: '#A8916B',
-          light: '#D8C8A8',
-        },
-        grape: {
-          DEFAULT: '#9D7EBC',
-          dark: '#7548A0',
-        },
-        ink: {
-          DEFAULT: '#2D2A26',
-          soft: '#4A453E',
-        },
+        // Verde-floresta: no tema marrom, so em acentos (o cartao da consulta ao vivo).
+        forest: { DEFAULT: '#20382C', deep: '#172A21', soft: '#2C4A3B' },
+        // Detalhes, molduras, icones. Como texto, so sobre o verde (contraste).
+        gold: { DEFAULT: '#B49A60', dark: '#8A7340', light: '#D9C79B' },
+        // Fundo das paginas e areas de leitura.
+        parchment: { DEFAULT: '#F3EBDD', dark: '#E8DCC6', light: '#FAF6EE' },
+        // Cards secundarios, etiquetas, elementos naturais.
+        olive: { DEFAULT: '#6D7659', light: '#A3AA8E' },
+        // Textos e titulos.
+        ink: { DEFAULT: '#352B26', soft: '#5C4F47' },
+        // O "BRUXA" do logotipo: so em pequenos acentos.
+        terracotta: { DEFAULT: '#C0562D', dark: '#9E4321' },
       },
       fontFamily: {
-        // Decorative headings (the purple titles)
-        script: ['"IM Fell DW Pica"', 'Georgia', 'serif'],
-        // Body text
+        // Titulos: serifada classica, como o letreiro do logotipo.
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        // Rotulos em caixa alta e a marca.
+        display: ['Cinzel', 'Georgia', 'serif'],
+        // Texto corrido.
         sans: ['"Josefin Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        // Navigation menu
-        menu: ['"Josefin Sans"', 'ui-sans-serif', 'sans-serif'],
-        // Display / titles
-        display: ['"IM Fell DW Pica"', 'Georgia', 'serif'],
       },
-      letterSpacing: {
-        display: '0.18em',
-      },
-      maxWidth: {
-        container: '1200px',
-      },
+      maxWidth: { container: '1200px', prose: '68ch' },
     },
   },
   plugins: [],
